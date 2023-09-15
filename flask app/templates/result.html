@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            Body {  
+        font-family: Calibri, Helvetica, sans-serif;  
+        
+        width: 100%;
+        height: 100vh;
+        
+        background-image: linear-gradient(rgba(2, 50, 0, 0.8),rgba(0,0,50,0.8)),url(backround.jpg);
+        background-position: center;
+        background-size: cover;
+       
+      } 
+      .head1{
+        font-family: Calibri, Helvetica, sans-serif;
+        color: #f1f1f1;
+      }
+      form {   
+        border: 3px solid #f1f1f1;   
+    }   
+    input[type=text], input[type=password] {   
+        width: 100%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+    }  
+      .container {   
+        width:90%;
+        max-width: 450px;
+        top:50%;
+        left:50%;
+        position: absolute;
+        transform: translate(-50%,-50%);
+
+        padding: 50px 60px 70px;   
+        background-color: lightblue;  
+        text-align: center;
+    }   
+        </style>
+    </head>
+    
+    <body>    
+        <center> <div class="head1"><h1> WELCOME  </h1> </div></center>
+        <div class="container">
+        <form action="{{ url_for('update') }}" method="POST">  
+               
+                <label>Username : </label>   
+                <input type="text" id="user" value="{{use}}" name="username" readonly> 
+                <label>Name : </label>   
+                <input type="text" id="user1" value="{{nam}}" name="name" disabled> 
+                <label>Unique id : </label>   
+                <input type="text" id="uiu" value={{ui}} name="uids" readonly>
+                <label>Password : </label>   
+                <input type="password" id="pass" value="{{pasw}}" name="password" disabled>  
+                <button type="submit1" id="sub1" value='0' name='upd' disabled>Save</button>   
+                <button type="submit2" id="sub2" value='1' name='upd' disabled>Delete</button>
+                <!-- <input type="checkbox" checked="checked"> Remember me   
+                <button type="button" class="cancelbtn"> Cancel</button>   
+                Forgot <a href="#"> password? </a>    -->                  
+               
+        </form> 
+        
+        <button type="submit" id="sub" value="enable" >Edit</button> 
+        
+        
+    </div>
+        <script>
+            const su=document.getElementById('sub');
+            // document.getElementById('sub1').onclick()
+            
+            function fun(){
+                document.getElementById('user1').disabled=false;
+                document.getElementById('pass').disabled=false;
+                document.getElementById('sub1').disabled=false;
+                document.getElementById('sub2').disabled=false;
+            }
+            su.addEventListener('click',fun);
+            
+        </script> 
+    </body>
+</html>
